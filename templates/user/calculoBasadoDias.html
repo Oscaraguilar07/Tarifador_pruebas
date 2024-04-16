@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Tarjeta</title>
+
+    <link rel="stylesheet" href="{% static './css/calculoBasadoDias.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="containertarifador">
+        <div class="container">
+            <div class="card">
+                <div class="card-info">
+                    <h1>Calculo Según Cantidad De Días De Operación</h1>
+                    <label class="text">PROCESO:</label>
+                    <select class="custom-select">
+                        <option value=""></option>
+                        {% for proceso in procesos %}
+                        <option value="opcion1">{{proceso.nombre}}</option>
+                        {% endfor %}
+                    </select>
+                    <label >CANTIDAD A PROCESAR:</label>
+                    <input type="text" class="custom-input" placeholder="Ingrese cantidad de procesos">
+                    <label >CANTIDAD DE RECURSOS:</label>
+                    <input type="text" class="custom-input" placeholder="Ingrese cantidad de recursos">
+                    <label >UNIDAD DE MEDIDA:</label>
+                    <input type="text" class="custom-input" placeholder="Ingrese unidad de medida">
+                    <label >LUGAR DE EJECUCION:</label>
+                    <select class="custom-select">
+                        <option value=""></option>
+                        <option value="dog">COLVATEL</option>
+                        <option value="cat">CLIENTE</option>
+                    </select>
+                    <button class="botoncalcular">CALCULAR</button>
+                </form>
+                </div>
+            </div>
+    </div>
+    </div>
+</body>
+
+</html>

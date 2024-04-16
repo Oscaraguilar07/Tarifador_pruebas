@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{% static './css/recursos_humanos.css' %}">
+    <!--Link de letra-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+    <title>Recursos Humanos</title>
+</head>
+<body>
+<section class="container">
+    <h1>Cálculo Según Cantidad</h1>     
+    <h2>De Personal</h2>
+    <form action="#" class="form">
+        <div class="input-box">
+            <label for="opciones">PROCESO:</label>
+            <select id="opciones" class="selectProceso" name="opciones" required>
+                <option value="opcion1"></option>
+                {% for proceso in procesos %}
+                <option value="opcion1">{{proceso.nombre}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="input-box">
+            <label>CANTIDAD A PROCESOS:</label>
+            <input type="text" class="selectCantidad" placeholder="Ingreso el numero de procesos" required />
+        </div>
+        <div class="input-box">
+            <label>CANTIDAD DE RECURSOS:</label>
+            <input type="number" class="selectCantidad" placeholder="Ingreso el numero de procesos" required />
+        </div>
+        <div class="input-box">
+            <label>UNIDAD  MEDIA   :</label>
+            <input type="text" class="selectCantidad" placeholder="Ingreso el numero de procesos" required />
+        </div>
+        <div class="input-box">
+            <label for="opciones">LUGAR DE EJECUCIÓN:</label>
+            <select id="opciones" class="selectProceso" name="opciones" required>
+                <option value="opcion1"></option>
+                <option value="opcion1">COLVATEL</option>
+                <option value="opcion2">CLIENTE</option>
+            </select>
+        </div>
+        <button>CALCULAR</button>    
+    </form>
+</section>
+</body>
+</html>

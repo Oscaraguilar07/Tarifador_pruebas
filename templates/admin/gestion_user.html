@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static './css/gestion_user.css' %}">
+    <!-- libreria de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Gestión de Usuarios</h1>
+        <div class="buscador">
+            <input type="text" placeholder="Buscar usuario...">
+            <button class="buscador-btn">Buscar</button>  
+            <div class="add-user">
+                <a href="{% url 'crear_usuario' %}">
+                    <button class="add-user-btn"><i class='bx bx-user'></i>Añadir Usuario</button>
+                </a>                
+            </div>
+        </div>
+        <div class="tablecontain">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Correo Electrónico</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for usuario in usuarios %}
+                    <tr>
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.apellido }}</td>
+                        <td>{{ usuario.correo_electronico }}</td>
+                        <td class="botones">
+                            <button class="eliminar" data-id="modal-eliminar{{ usuario.id }}"><i class='bx bx-trash'></i>Eliminar</button>
+                            <button class="modificar" data-id="modal-modificar{{ usuario.id }}"><i class='bx bx-edit'></i>Modificar</button>
+                        </td>
+                    </tr>
+                    <div id="modal-eliminar{{ usuario.id }}" class="modal">
+                        <div class="eliminar-modal">
+                            <span class="cerrar">&times;</span>
+                            <h2>¿Estás seguro que deseas eliminar este usuario?</h2>
+                            <div class="modal-botones">
+                                <form action="{% url 'eliminar_usuario' usuario.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="confirmar-eliminar">Confirmar</button>
+                                </form>
+                                <button class="cancelar">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="modal-modificar{{ usuario.id }}" class="modal">
+                        <div class="modal-contenido modificar-modal">
+                            <span class="cerrar">&times;</span>
+                            <h2>Modificar Usuario</h2>
+                            <form action="{% url 'modificar_usuario' usuario.id %}" method="post" class="form_content">
+                                {% csrf_token %}
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="inputDate" id="nombre" name="nombre" value="{{ usuario.nombre }}">
+                                
+                                <label for="apellido">Apellido:</label>
+                                <input type="text" class="inputDate" id="apellido" name="apellido" value="{{ usuario.apellido }}">
+                                
+                                <label for="correo">Correo Electrónico:</label>
+                                <input type="email" class="inputDate" id="correo" name="correo" value="{{ usuario.correo_electronico }}">
+                                
+                                <div class="modal-botones">
+                                    <button type="button" class="cancelar_md">Cancelar</button>
+                                    <button type="submit" class="guardar-modificacion">Guardar</button>
+                                </div>
+                                <div class="modal-botones">
+                                    <a href="{% url 'cambio_admin' %}"
+                                        <button  class="cambio_contraseña"></button><i class='bx bx-refresh'></i>Reseteo de Contraseña</button>
+                                    </a>
+                                </div>
+                                
+                                </div>
+                            </form>
+                        </div>
+                    </div>                                 
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <button class="anterior"><i class='bx bx-chevron-left'></i>Anterior</button>
+            <span class="pagina-inf">Página 1 de 3</span>
+            <button class="siguiente">Siguiente<i class='bx bx-chevron-right'></i></button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/gestion.js' %}"></script>
+</body> 
+</html>
+

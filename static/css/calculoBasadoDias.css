@@ -1,0 +1,232 @@
+:root {
+    --blue-bayoux-50: #f5f8fa;
+    --blue-bayoux-100: #e9eff5;
+    --blue-bayoux-200: #cfdde8;
+    --blue-bayoux-600: #3b6381;
+    --blue-bayoux-700: #345670;
+    --blue-bayoux-800: #0b3d93;
+    --blue-bayoux-900: #122754;
+    --blue-bayoux-950: #080d28;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--blue-bayoux-100);
+    background-image: url(/static/img/imagen4.png);
+    background-size: cover;
+    color: var(--blue-bayoux-950);
+    margin-top: 100px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.containertarifador{
+    display: grid;
+	grid-template-rows: repeat(10, 1fr);
+	grid-template-columns: repeat(10, 1fr);
+	gap: 0;
+    height: 100%;
+	width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    height: 100vh; /* Opcional: ajusta la altura de la tarjeta según tu diseño */
+	grid-area: 1 / 4 / 7 / 8;
+    background-image: url(/static/img/imagen4.png);
+    background-size: cover;   
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 600px;
+    height: 560px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card-info {
+    margin-top: 20px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-info form {
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    margin-top: 20px;
+    width: 60%;
+    flex: content;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+h1{
+    color: black;
+    font-size: 24px;
+    font-family: 'Protest Strike', sans-serif;
+    text-align: center;
+}
+
+.card-info label {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.card-info .custom-input{
+    width: 100%; /* Establece el ancho de los inputs al 100% */
+    margin-bottom: 10px;
+    border-radius: 6px;
+    outline: none;
+    border: solid 1px #ddd;
+}
+
+.custom-input{
+    height: 40px;    
+    width: 300px;
+}
+
+.card-info .custom-select{
+    width: 100%; /* Establece el ancho de los inputs al 100% */
+    margin-bottom: 10px;
+    border-radius: 6px;
+    outline: none;
+    border: solid 1px #ddd;
+}
+
+.custom-select{
+    height: 40PX;
+    width: 500px;
+}
+
+.botoncalcular{
+    color: white;
+    background-color: var(--blue-bayoux-700);
+    align-items: end;
+    height: 40PX;
+    width: 500px;
+    border-radius: 6px;
+    outline: none;
+    border: solid 1px var(--blue-bayoux-700);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.botoncalcular:hover{
+    color: var(--blue-bayoux-700);
+    background:var(--blue-bayoux-50);
+    border: solid 2px var(--blue-bayoux-700);
+    transition: background-color 0.5s ease;
+}
+
+.card-info .botoncalcular{
+    margin-top: 20px;
+    width: 100%; /* Establece el ancho de los inputs al 100% */
+}
+
+@media only screen and (max-width: 767px) {
+    
+    .card {
+        background-color: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        width: 600px;
+        height: 550px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    
+    .card-info {
+        margin-top: 10px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .card-info form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form{
+        margin-top: 20px;
+        width: 80%;
+        flex: content;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+    }
+    
+    h1{
+        color: black;
+        font-size: 24px;
+        font-family: 'Protest Strike', sans-serif;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .card {
+        background-color: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        width: 300px;
+        height: 500px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    
+    .card-info {
+        margin-top: 0px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .card-info form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form{
+        margin-top: 20px;
+        width: 80%;
+        flex: content;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+    }
+    
+    h1{
+        color: black;
+        font-size: 20px;
+        font-family: 'Protest Strike', sans-serif;
+        text-align: center;
+    }
+
+    .card-info .botoncalcular{
+        margin-top: 0px;
+        width: 100%; /* Establece el ancho de los inputs al 100% */
+    }
+
+}
+
+
+  

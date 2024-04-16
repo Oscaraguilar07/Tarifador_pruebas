@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/perfil.css">
+    <!-- libreria de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>PERFIL</h1>
+        <div class="buscador">
+            <input type="text" placeholder="Buscar usuario...">
+            <button class="buscador-btn">Buscar</button>
+        </div>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Perfil</th>
+                    <th>Costo mes</th>
+                    <th>opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ID de producto o persona</td>
+                    <td>Auxiliar básico sin equipos (salario base $1.100.000)</td>
+                    <td> 3.113.926,00 
+                    </td>
+                    <td>
+                        <button class="eliminar"><i class='bx bx-trash'></i>Eliminar</button>
+                        <button class="modificar"><i class='bx bx-edit'></i>Modificar</button>
+                    </td>
+                </tr>
+                <!-- Más filas de datos -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button class="anterior"><i class='bx bx-chevron-left'></i>Anterior</button>
+            <span class="pagina-inf">Página 1 de 3</span>
+            <button class="siguiente">Siguiente<i class='bx bx-chevron-right'></i></button>
+        </div>
+        <div class="add-user">
+            <button class="add-user-btn"><i class='bx bx-user'></i>Añadir Usuario</button>
+        </div>
+    </div>
+    <div id="modal-eliminar" class="modal">
+        <div class="eliminar-modal">
+            <span class="cerrar">&times;</span>
+            <h2>¿Estás seguro que deseas eliminar este usuario?</h2>
+            <div class="modal-botones">
+                <button class="cancelar">Cancelar</button>
+                <button class="confirmar-eliminar">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-modificar" class="modal">
+        <div class="modal-contenido modificar-modal">
+            <span class="cerrar">&times;</span>
+            <h2>Modificar usuario</h2>
+            <form class="form_content">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" class="inputDate" id="correo" name="correo" value="correo@ejemplo.com">
+                
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado" class="selectDate">
+                    <option value="activo">Activo</option>
+                <option value="activo">Inactivo</option>
+                </select>                
+                <div class="modal-botones">
+                    <button class="cancelar_md">Cancelar</button>
+                    <button class="guardar-modificacion">Guardar</button>
+                    <a href="/views/cambio_admin.html" class="cambio_contraseña">Reseteo de Contraseña</a>
+                </div>
+            </form>
+            
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/js/modales.js"></script>
+</body>
+</html>

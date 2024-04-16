@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proceso 2</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="{% static './css/proceso2.css' %}">
+    <!-- libreria de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>proceso 2</h1>
+        <div class="buscador">
+            <input type="text" placeholder="Buscar usuario...">
+            <button class="buscador-btn">Buscar</button>
+            <div class="add-user">
+                <button class="add-user-btn"><i class='bx bx-user'></i>Añadir tabla</button>
+            </div>
+        </div>
+        <div class="tablecontain">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>proceso</th>
+                        <th>dias_holguras</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>EMPAQUE O REEMPAQUE DE INFORMACION EN CAJAS</td>
+                        <td>0</td>
+                        <td class="botones">
+                            <button class="eliminar"><i class='bx bx-trash'></i>Eliminar</button>
+                            <button class="modificar"><i class='bx bx-edit'></i>Modificar</button>
+                        </td>
+                    </tr>
+                    <!-- Más filas de datos -->
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <button class="anterior"><i class='bx bx-chevron-left'></i>Anterior</button>
+            <span class="pagina-inf">Página 1 de 3</span>
+            <button class="siguiente">Siguiente<i class='bx bx-chevron-right'></i></button>
+        </div>
+    </div>
+    <div id="modal-eliminar" class="modal">
+        <div class="eliminar-modal">
+            <span class="cerrar">&times;</span>
+            <h2>¿Estás seguro que deseas eliminar este tabla?</h2>
+            <div class="modal-botones">
+                <button class="cancelar">Cancelar</button>
+                <button class="confirmar-eliminar">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-modificar" class="modal">
+        <div class="modal-contenido modificar-modal">
+            <span class="cerrar">&times;</span>
+            <h2>Modificar tabla</h2>
+            <form class="form_content">
+                <label for="proceso">Proceso:</label>
+                <input type="text" id="proceso" name="proceso" placeholder="Ingrese el nombre del proceso">
+
+                <label for="dias_holguras">Días de Holguras:</label>
+                <input type="number" id="dias_holguras" name="dias_holguras" placeholder="Ingrese los días de holguras">
+                
+                <div class="modal-botones">
+                    <button class="cancelar_md">Cancelar</button>
+                    <button class="guardar-modificacion">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/js/modales.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+:root {
+    --primary: #0b3d93;
+    --blue-bayoux-50: #f5f8fa;
+    --blue-bayoux-100: #e9eff5;
+    --blue-bayoux-200: #cfdde8;
+    --blue-bayoux-600: #3b6381;
+    --blue-bayoux-700: #345670;
+    --blue-bayoux-800: #0b3d93;
+    --blue-bayoux-900: #122754;
+    --blue-bayoux-950: #080d28;    
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    align-items: center;
+    background-image: url(/static/img/imagen4.png);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;   
+    display: flex;  
+    height: 100vh;
+    justify-content: center;
+}
+
+.container{
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--blue-bayoux-700);
+    max-width: 430px;
+    margin: 0 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.container .forms{
+    align-items: center;
+    display: flex;
+    height: 440px;
+    transition: height 0.2s ease;
+    width: 200%;
+}
+
+
+.container .form{
+    background-color: #fff;
+    transition: margin-left 0.18s ease;
+    padding: 30px;
+    width: 50%;
+}
+
+.container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container .signup{
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.container.active .forms{
+    height: 600px;
+}
+.container .form .title{
+    font-family: 'Protest Riot', sans-serif;
+    font-family: 'Protest Strike', sans-serif;
+    font-size: 27px;
+    font-weight: 600;
+    position: relative;
+}
+
+.form .title::before{
+    background-color: var(--blue-bayoux-700);
+    border-radius: 25px;
+    bottom: 0;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 30px;
+}
+
+.form .input-field{
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    height: 50px;
+    margin-top: 30px;
+    position: relative;
+    width: 100%;
+    width: 100%;
+}
+
+
+.input-field input{
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    border: none;
+    font-size: 16px;
+    height: 100%;
+    outline: none;
+    padding: 0 35px;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color: var(--blue-bayoux-700);
+}
+
+.input-field i{
+    color: #999;
+    font-size: 23px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: var(--blue-bayoux-700);
+}
+
+.input-field i.icon{
+    left: 0;
+}
+.input-field i.showHidePw{
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    right: 0;
+}
+
+.eye_open{
+    cursor: pointer;
+    display: none;
+    padding: 10px;
+    right: 0;
+    top: 26px;
+    width: 44px;
+}
+.eye_open{
+    background-image: url("../img/eye_open.ico");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: invert(0.4) sepia(1);
+    width: 26px;
+    height: 20px;
+    right: 8px;
+}
+
+.form .checkbox-text{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content{
+    align-items: center;
+    display: flex;
+}
+
+.checkbox-content input{
+    accent-color: var(--blue-bayoux-700);
+    margin-right: 10px;
+}
+
+.form .text{ 
+    font-size: 14px;
+}
+
+.form a.text{
+    color: var(--blue-bayoux-700);
+    text-decoration: none;
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+.form .button{
+    margin-top: 35px;
+}
+
+.form .button input{
+    border-radius: 6px;
+    background-color: var(--blue-bayoux-700);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.button input:hover{
+    background-color: var(--blue-bayoux-700);
+}
+
+.form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+}

@@ -1,0 +1,286 @@
+:root {
+    --blue-bayoux-50: #f5f8fa;
+    --blue-bayoux-100: #e9eff5;
+    --blue-bayoux-200: #cfdde8;
+    --blue-bayoux-600: #3b6381;
+    --blue-bayoux-700: #345670;
+    --blue-bayoux-800: #0b3d93;
+    --blue-bayoux-900: #122754;
+    --blue-bayoux-950: #080d28;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--blue-bayoux-100);
+    background-image: url(/static/img/imagen4.png);
+    background-size: cover;
+    color: var(--blue-bayoux-950);
+    margin-top: 100px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    height: 100vh; /* Opcional: ajusta la altura de la tarjeta según tu diseño */
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    height: 600px;
+    overflow: hidden;
+    width: 800px;
+}
+
+.card-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card-info form {
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    flex: content;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin-top: 20px;
+    width: 90%;
+}
+
+h1{
+    color: black;
+    font-family: 'Protest Strike', sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+.columnas {
+    display: grid;
+    grid-template-columns: 70% 15% 15%; /* Esto establece tamaños distintos para las columnas */
+    gap: 10px; /* Espacio entre las celdas */
+    height: 20px;
+}
+
+.encabezado{
+    margin: 10px;
+}
+
+label{
+    color: var(--blue-bayoux-800);
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    margin-top: 20px;
+}
+
+input{
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    border: 1px solid gainsboro;
+    outline: none;
+    text-align: center;
+}
+
+.content-text{
+    text-align: right;
+}
+
+.resultados{
+    background: var(--blue-bayoux-200);
+    height: 40px;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 5px;
+    color: var(--blue-bayoux-950);
+}
+
+.botones-container {
+    text-align: center;
+    transition: all 0.6 ease;
+}
+
+.botones-container button {
+    margin: 5px; /* Ajusta el margen entre los botones según sea necesario */
+}
+
+button {
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+}
+
+.custoboton{
+    background-color: var(--blue-bayoux-700);
+    color: white;
+    border: 2px solid var(--blue-bayoux-700);
+}
+
+.botones-container :hover{
+    color: var(--blue-bayoux-700);
+    background:var(--blue-bayoux-50);
+    border: solid 2px var(--blue-bayoux-700);
+    transition: background-color 0.5s ease;
+}
+ 
+@media only screen and (max-width: 767px) {
+    
+    .card {
+        background-color: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        width: 600px;
+        height: 550px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    
+    .card-info {
+        margin-top: 10px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .card-info form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form{
+        margin-top: 0px;
+        width: 90%;
+        flex: content;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+    }
+    
+    h1{
+        color: black;
+        font-size: 24px;
+        font-family: 'Protest Strike', sans-serif;
+        text-align: center;
+    }
+
+    .columnas {
+        display: grid;
+        grid-template-columns: 60% 20% 20%; /* Esto establece tamaños distintos para las columnas */
+        gap: 10px; /* Espacio entre las celdas */
+        height: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .card {
+        background-color: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        width: 300px;
+        height: 500px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    
+    .card-info {
+        margin-top: 0px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .card-info form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form{
+        margin-top: 20px;
+        width: 80%;
+        flex: content;
+        font-family: 'Poppins', sans-serif;
+        font-size: 8px;
+    }
+    
+    h1{
+        color: black;
+        font-size: 20px;
+        font-family: 'Protest Strike', sans-serif;
+        text-align: center;
+    }
+
+    .card-info .botoncalcular{
+        margin-top: 0px;
+        width: 100%; /* Establece el ancho de los inputs al 100% */
+    }
+
+    .columnas {
+        display: grid;
+        grid-template-columns: 40% 30% 30%; /* Esto establece tamaños distintos para las columnas */
+        gap: 10px; /* Espacio entre las celdas */
+        height: 20px;
+    }
+
+    .encabezado{
+        margin: 0px;
+    }
+    
+    label{
+        color: var(--blue-bayoux-800);
+        display: flex;
+        flex-direction: column;
+        height: 30px;
+        margin-top: 10px;
+        margin-right: opx;
+    }
+    
+    input{
+        width: 80px;
+        height: 30px;
+        margin-top: 10px;
+        border: 1px solid gainsboro;
+        outline: none;
+    }
+    
+    .content-text{
+        text-align: right;
+    }
+    
+    .resultados{
+        background: var(--blue-bayoux-200);
+        height: 30px;
+        margin-top: 10px;
+    }
+
+    button {
+        height: 30px;
+        width: 100px;
+        border-radius: 5px;
+    }
+
+}
+
+
+  

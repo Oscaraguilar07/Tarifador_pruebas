@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <link rel="stylesheet" href="{% static './css/login_iconos.css' %}">
+
+
+    <link rel="stylesheet" href="{% static './css/login_iconos.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <title>Login</title>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    </style> 
+</head>
+<body>
+<div class="container">
+    <div class="forms">
+    <div class="form login">
+        <span class="title">Login</span>
+        <form method="POST" >
+            {% csrf_token %}
+        <form method="POST" >
+            {% csrf_token %}
+        <div class="input-field">
+            <input type="text" name="username" id="username" placeholder="Usuario" required >
+            <input type="text" name="username" id="username" placeholder="Usuario" required >
+            <i class="uil uil-envelope icon"></i>
+        </div>
+        <div class="input-field">
+            <input type="password" id="input" name="password" class="password" placeholder=" Clave" required>
+            <input type="password" id="input" name="password" class="password" placeholder=" Clave" required>
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw"></i>
+            <i class="eye_open"></i>
+        </div>
+        <div class="input-field  button">
+            <input type="submit" value="Ingresar">
+        </div>
+        <div class="input-field  button">
+            <input type="submit" value="Ingresar">
+        </div>
+
+        <div class="checkbox-text">
+            <a href="#" class="text">Recuperar Contraseña</a>
+        </div>
+
+
+        </form>
+        </div>
+    </div>
+</div>
+<script src="{% static './js/ingreso_iconos.js' %}"></script>
+</body>
+</html>

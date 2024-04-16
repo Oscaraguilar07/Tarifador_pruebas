@@ -1,0 +1,37 @@
+{% extends 'plantilla.html' %}
+
+{% block title %}Tarificador - Dashboard {% endblock %}
+
+
+{% block content %}
+    <div class="container" >
+        <div class="card">
+            <div class="card-info">
+                <h1>Calculo Según Cantidad De Días De Operación</h1>
+            <form>
+                <label class="text">Proceso:</label>
+                <select class="custom-select">
+                    <option value=""></option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select>
+                <label >Cantidad a procesar:</label>
+                <input type="text" class="custom-input" placeholder="Ingrese cantidad de procesos">
+                <label >Cantidad de recursos:</label>
+                <input type="text" class="custom-input" placeholder="Ingrese cantidad de recursos">
+                <label >Unidad de medida:</label>
+                <input type="text" class="custom-input" placeholder="Ingrese unidad de medida">
+                <label >Lugar de ejecucion:</label>
+                <select class="custom-select">
+                    <option value=""></option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select>
+                <button class="botoncalcular">CALCULAR</button>
+            </form>
+            </div>
+          </div>
+    
+    </div>
+
+{% endblock %}

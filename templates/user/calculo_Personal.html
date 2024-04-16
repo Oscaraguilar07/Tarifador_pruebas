@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Tarjeta</title>
+    <link rel="stylesheet" href="{% static './css/calculo_personal.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+            <div class="card">
+                <div class="card-info">
+                    <h1>Cálculo Pesonal</h1>
+                    <form action="">
+                        <div class="columnas">
+                            <div class="item">
+                                
+                            </div>
+                            <div class="item">
+                                <label for="" class="encabezado">Cantidad</label>
+                            </div>
+                            <div class="item">
+                                <label for="" class="encabezado">Sub-total</label>
+                            </div>
+                        </div>
+                        <div class="columnas">
+                            <div class="item">
+                                <label for="">Auxiliar basico sin equipos (salario base $900.000)</label>
+                                <label for="">Auxiliar basico con equipo de computo de escritorio (salario base $900.000)</label>
+                                <label for="">Digitalizador con equipo y scanner i2800 (salario base $960.000)</label>
+                                <label for="">Lider CAP con equipo portatil (salario base $1.504.211)</label>
+                                <label for="">Supervisor CAP son equipo portátil (salario base $1.851.337)</label>
+                                <label for="">Cordinador CAP con equipo portatil (salario base $900.000)</label>
+                                <div class="content-text">
+                                    <label for="">RENTABILIDAD</label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                {% for perfil in perfiles %}
+                                <input type="number" id="input" data-valor="{{ perfil.costo_mes }}">
+                                {% endfor %}
+                                <input type="number">
+                                <div class="content-text">
+                                    <label for="">TOTAL</label>
+                                </div> 
+                            </div>
+                            <div class="item">
+                                <input class="resultados" type="text" id="resultado" readonly>
+                                <input class="resultados" type="text" id="resultado" readonly>
+                                <input class="resultados" type="text" id="resultado" readonly>
+                                <input class="resultados" type="text" id="resultado" readonly>
+                                <input class="resultados" type="text" id="resultado" readonly>
+                                <input class="resultados" type="text" id="resultado" readonly>
+                                <label for="">%</label>
+                                <input class="resultados" type="text" id="resultadoInput7" readonly>
+                            </div>
+                            <div class="botones-container">
+                                <button type="reset" class="custoboton">Limpiar</button>
+                                <button id="calcularBtn" class="custoboton">Calcular</button>
+                                <button class="custoboton">Añadir</button>
+                            </div>
+                          </div>
+                    </form>
+                </div>
+              </div>
+      </div>
+
+      <script src="{% static './js/calculo_personal.js' %}"></script>
+</body>
+</html>
+

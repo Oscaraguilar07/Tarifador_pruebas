@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Contraseña - Administrador</title>
+
+    <link rel="stylesheet" href="{% static './css/admin.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+</head>
+<body>
+    <div class="container">
+        <div class="forms">
+            <div class="form admin">
+                <span class="title">Cambio de Contraseña - Administrador</span>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        <input type="password" name="adminPassword" id="adminPassword" class="password" placeholder="Contraseña de Administrador" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                        <i class="material-symbols-outlined eye_open"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="newPassword" id="newPassword" class="password" placeholder="Nueva Contraseña" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                        <i class="material-symbols-outlined eye_open"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="confirmPassword" id="confirmPassword" class="password" placeholder="Confirmar Nueva Contraseña" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                        <i class="material-symbols-outlined eye_open"></i>
+                    </div>
+                    <div class="input-field button">
+                        <input type="submit" value="Cambiar Contraseña">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/admin_contraseña.js' %}"></script>
+</body>
+</html>
